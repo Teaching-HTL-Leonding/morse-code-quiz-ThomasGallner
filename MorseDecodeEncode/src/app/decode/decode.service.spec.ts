@@ -1,16 +1,17 @@
-import { TestBed } from '@angular/core/testing';
+import { MorseCodeService } from '../morse-code.service';
 
 import { DecodeService } from './decode.service';
 
 describe('DecodeService', () => {
-  let service: DecodeService;
+  describe('EncodeService', () => {
+    const decodeService = new DecodeService(new MorseCodeService());
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(DecodeService);
-  });
+    it('can get the correct decoded text, that should contain no blanks', () => {
+      expect(decodeService.decode('.... . .-.. .-.. ---')).toBe('HELLO');
+    });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
+    it('can get the correct encoded text from a text, that should contain blanks', () => {
+      expect(decodeService.decode('.... . .-.. .-.. --- / .-- --- .-. .-.. -..')).toBe('HELLO WORLD');
+    });
   });
 });

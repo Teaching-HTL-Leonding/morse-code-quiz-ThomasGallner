@@ -11,20 +11,17 @@ export class EncodeService {
     text = this.validateText(text);
     let result = '';
 
-    for (let letter of text) {
-      if (letter === ' ') {
-        result += ' / ';
-      } else {
-        result += this.morseCordeService.getMorseCodeByLetter(letter);
+    for (let i = 0; i < text.length; i++) {
+      result += this.morseCordeService.getMorseCodeByLetter(text[i]);
+      if (i !== text.length - 1) {
+        result += ' ';
       }
-
-      result += ' ';
     }
 
     return result;
   }
 
-  private validateText(textToValidate: string): string{
+  private validateText(textToValidate: string): string {
     let validatedText = '';
     textToValidate = textToValidate.trim();
     validatedText = textToValidate.replace(/  +/g, ' ');

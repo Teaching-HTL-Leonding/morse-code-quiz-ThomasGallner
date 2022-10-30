@@ -28,7 +28,7 @@ export class DecodeService {
         result += this.morseCordeService.getLetterByMorseCode(morseCodeLetter);
 
          if(morseCodeInput[i+1] === '/' && morseCodeInput[i+2] === ' '){
-          morseCodeLetter = ' / ';
+          morseCodeLetter = '/';
           result += this.morseCordeService.getLetterByMorseCode(morseCodeLetter)
         }
 

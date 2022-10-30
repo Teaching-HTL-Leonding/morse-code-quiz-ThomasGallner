@@ -1,11 +1,15 @@
 <h2>Decode</h2>
 
-<label>Enter Morse Code:
-  <input type="text" [(ngModel)]="this.input">
-</label>
+<div>
+  <label><p>Enter Morse Code:</p>
+    <input type="text" [(ngModel)]="this.input">
+  </label>
 
 <button [disabled]="!this.isValidInput()"  (click)="this.onDecodeBtn()">Decode</button>
+</div>
 
-<label>Text Result:
-  <input readonly type="text" [(ngModel)]="this.result">
-</label>
+<div>
+  <label><p>Text Result:</p>
+    <input readonly type="text" [(ngModel)]="this.result">
+  </label>
+</div>

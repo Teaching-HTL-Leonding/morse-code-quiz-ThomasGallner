@@ -1,11 +1,15 @@
 <h2>Encode</h2>
 
-<label>Enter Text:
-  <input type="text" [(ngModel)]="this.input">
-</label>
+<div>
+  <label><p>Enter Text:</p>
+    <input id="inputField" type="text" [(ngModel)]="this.input">
+  </label>
 
-<button [disabled]="!this.isValidInput()" (click)="this.onEncodeBtn()">Encode</button>
+  <button [disabled]="!this.isValidInput()" (click)="this.onEncodeBtn()">Encode</button>
+</div>
 
-<label>Morse Code:
-  <input readonly type="text" [(ngModel)]="this.result">
-</label>
+<div>
+  <label><p>Morse Code</p>
+    <input readonly type="text" [(ngModel)]="this.result">
+  </label>
+</div>

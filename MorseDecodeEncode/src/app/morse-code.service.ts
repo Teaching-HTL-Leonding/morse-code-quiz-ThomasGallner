@@ -34,7 +34,7 @@ export class MorseCodeService {
       'X': '-..-',
       'Y': '-.--',
       'Z': '--..',
-      ' ': ' / '
+      ' ': '/'
     };
   }
 
